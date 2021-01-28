@@ -1,0 +1,56 @@
+:root {
+    --bg-primary: #222831;
+    --bg-bars: #708080;
+    --ff-accent: #e6e1bb;
+    --ff-secondary: #ABB7B7;
+}
+
+html {
+    background-color: var(--bg-primary);
+}
+
+.array-container {
+    padding: 5vh 5vh 2vh 5vh;
+    height: 75vh;
+    align-items: center;
+}
+
+.array-bar {
+    width: 2px;
+    background-color: var(--bg-bars);
+    display: inline-block;
+    margin: 0 1px;
+}
+
+button {
+    transition: all .3s ease-out;
+}
+
+button:disabled {
+    opacity: 80%;
+    filter: saturate(50%);
+    filter: brightness(70%);
+    transition: all .02s ease-in;
+}
+
+.reset-btn, .sort-btn {
+    background-color: rgba(255, 255, 255, 0);
+    border: solid 2px;
+    border-radius: 5px;
+    margin: 5px 5px;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    align-items: center;
+}
+
+.reset-btn {
+    border-color: var(--ff-accent);
+    color: var(--ff-accent);
+}
+
+.sort-btn {
+    border-color: var(--ff-secondary);
+    color: var(--ff-secondary);
+}
