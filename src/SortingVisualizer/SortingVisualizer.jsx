@@ -31,11 +31,6 @@ export default class SortingVisualizer extends React.Component {
     for (let i = 0; i < Math.floor((vw * 0.75) / 4); i++) {
       array.push(randomIntFromInterval(5, 1000));
     }
-    // TODO
-    // console.log(document.querySelector('.array-container').style.width);
-    // for (let i = 0; i < Math.floor(document.querySelector('.array-container').offsetWidth/4); i++) {
-    //     array.push(randomIntFromInterval(5, 1000));
-    // }
 
     this.setState({ array });
   }
@@ -49,7 +44,6 @@ export default class SortingVisualizer extends React.Component {
       0,
       this.state.array.length - 1
     );
-    console.log(this.state.array);
     animate(animations);
   }
 
