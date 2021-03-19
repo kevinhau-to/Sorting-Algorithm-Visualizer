@@ -230,7 +230,7 @@ function heapify(array, animations, size, i) {
   }
 
   // If root has changed, swap it with the largest child
-  if (root != i) {
+  if (root !== i) {
     const temp = array[i];
     array[i] = array[root];
     array[root] = temp;

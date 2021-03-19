@@ -115,14 +115,6 @@ function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function checkArrayEquals(array1, array2) {
-  if (array1.length !== array2.length) return false;
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) return false;
-  }
-  return true;
-}
-
 function animate(animations) {
   const ANIMATION_SPEED = 0;
   const arrayBars = document.querySelectorAll('.array-bar');
