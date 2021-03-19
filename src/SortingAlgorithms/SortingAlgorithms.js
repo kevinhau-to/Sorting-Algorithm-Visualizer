@@ -25,7 +25,6 @@ export const getMergeSortAnims = (array, animations, start, end) => {
     getMergeSortAnims(array, animations, start, mid);
     getMergeSortAnims(array, animations, mid + 1, end);
     // Combines and sorts the two halves together
-    // merge(array, animations, start, end);
     merge(array, animations, start, mid, end);
   }
 };
@@ -63,7 +62,6 @@ function merge(array, animations, start, mid, end) {
         k--;
       }
 
-      // animations.push(new Animation(i, i + 1, swap));
       array[i] = temp;
       i++;
       j++;
@@ -205,9 +203,9 @@ export const getHeapSortAnims = (array, animations) => {
   // Extract max value (first element) and replace it with the last
   // element. Everything after the last element is sorted.
   for (let i = size - 1; i >= 0; i--) {
-    const x = array[0];
+    const temp = array[0];
     array[0] = array[i];
-    array[i] = x;
+    array[i] = temp;
     animations.push(new Animation(0, i, true));
 
     // Restructure remaining heap to satisfy heuristic
@@ -222,12 +220,8 @@ function heapify(array, animations, size, i) {
   const left = 2 * i + 1;
   const right = 2 * i + 2;
 
-  if (left < size && array[left] > array[root]) {
-    root = left;
-  }
-  if (right < size && array[right] > array[root]) {
-    root = right;
-  }
+  (left < size && array[left] > array[root]) ? root = left : null;
+  (right < size && array[right] > array[root]) ? root = right : null;
 
   // If root has changed, swap it with the largest child
   if (root !== i) {
