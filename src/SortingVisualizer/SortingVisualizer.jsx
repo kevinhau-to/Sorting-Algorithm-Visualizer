@@ -129,7 +129,7 @@ function animate(animations) {
   let i = 0;
 
   // Helper function to animate the sorting algorithms
-  const call = () => {
+  const getNextAnim = () => {
     const anim = animations[Math.floor(i / 2)];
 
     if (i % 2 === 0) {
@@ -164,11 +164,11 @@ function animate(animations) {
 
     // Calls itself again if the animation should be skipped
     if (anim.skip && i < animations.length * 2) {
-      call();
+      getNextAnim();
     }
   };
 
   // Continuously calls the animation function frame by frame at
   // intervals of ANIMATION_SPEED ms.
-  const interval = setInterval(call, ANIMATION_SPEED);
+  const interval = setInterval(getNextAnim, ANIMATION_SPEED);
 }
